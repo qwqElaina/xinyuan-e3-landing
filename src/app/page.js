@@ -25,11 +25,14 @@ export default function Home() {
         {/* **新增**：汽车图片作为背景 */}
         {/* Next.js 的 Image 组件会自动优化图片性能 */}
         <div className="absolute inset-0 z-0">
+          // src/app/page.js
+// ...
           <Image
-            src="/images/hero-car.jpg" // 引用我们在 public/images 中保存的文件
+            src="/images/hero-car.png" // **此处已更改为 .png**
             alt="鑫源E3 汽车高清图片"
-            fill // 填充整个父容器
-            priority // 标记为优先加载（首屏图）
+            fill
+            priority
+// ...
             style={{ objectFit: 'cover' }} // 确保图片覆盖容器
             className="opacity-70 transition duration-500 ease-in-out hover:opacity-100" // 添加一些透明度，让文字更突出，并添加悬浮效果
           />
