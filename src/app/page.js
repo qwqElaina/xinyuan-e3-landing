@@ -19,20 +19,43 @@ export default function Home() {
         </button>
       </nav>
 
-      {/* 2. Hero 首屏宣传区 (目前是占位符) */}
+      {/* 2. Hero 首屏大图/主宣传区 - 展示 E3 的核心卖点 */}
       <section className="relative h-[80vh] bg-gray-900 flex items-center justify-center overflow-hidden">
-        {/* Placeholder for Image/Video - 稍后我们将用图片替换这里 */}
-        <div className="text-center z-10 px-4">
-          <h2 className="text-sm font-bold tracking-widest text-red-500 mb-4 uppercase">鑫源 E3</h2>
-          <h1 className="text-6xl md:text-8xl font-extrabold text-white mb-6 leading-tight">
-            安逸，好大方
+        
+        {/* **新增**：汽车图片作为背景 */}
+        {/* Next.js 的 Image 组件会自动优化图片性能 */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/hero-car.jpg" // 引用我们在 public/images 中保存的文件
+            alt="鑫源E3 汽车高清图片"
+            fill // 填充整个父容器
+            priority // 标记为优先加载（首屏图）
+            style={{ objectFit: 'cover' }} // 确保图片覆盖容器
+            className="opacity-70 transition duration-500 ease-in-out hover:opacity-100" // 添加一些透明度，让文字更突出，并添加悬浮效果
+          />
+        </div>
+        
+        {/* 标题和按钮 (保持在图片上方) */}
+        <div className="text-center z-10 px-4 relative"> {/* 确保文字在图片上方 (z-index) */}
+          <h2 className="text-sm font-bold tracking-widest text-red-500 mb-4 uppercase">鑫源 E3 | 安逸，好大方</h2>
+          <h1 className="text-6xl sm:text-7xl md:text-8xl font-extrabold text-white mb-6 leading-tight drop-shadow-lg">
+            即刻出发，即刻拥有
           </h1>
-          <button className="bg-red-600 text-white px-10 py-3 rounded-md hover:bg-red-700 transition duration-300 text-lg font-medium shadow-xl mt-4">
-              查看配置
-          </button>
+          <p className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
+            7.5立方超大空间，全新宁德时代动力电池，为您带来高效运输体验。
+          </p>
+          <div className="flex justify-center gap-4">
+            <button className="bg-red-600 text-white px-10 py-3 rounded-md hover:bg-red-700 transition duration-300 text-lg font-medium shadow-xl transform hover:scale-105">
+              立即预订
+            </button>
+            <button className="border-2 border-white text-white px-10 py-3 rounded-md hover:bg-white hover:text-gray-900 transition duration-300 text-lg font-medium transform hover:scale-105">
+              参数配置
+            </button>
+          </div>
         </div>
       </section>
-
+      
+      {/*... 其余代码不变 ...*/}
       {/* 3. 产品亮点部分 (Features) */}
       <section className="py-24 max-w-7xl mx-auto px-6">
         <h2 className="text-4xl font-bold text-center mb-16 text-gray-900">核心优势</h2>
