@@ -27,15 +27,17 @@ export default function Home() {
         <div className="absolute inset-0 z-0">
           // src/app/page.js
 // ...
-          <Image
-            src="/images/hero-car.png" // **此处已更改为 .png**
-            alt="鑫源E3 汽车高清图片"
-            fill
-            priority
+          // src/app/page.js
 // ...
+          <Image
+            src="/images/hero-car.png" // **确保是 .png**
+            alt="鑫源E3 汽车高清图片"
+            fill // 填充整个父容器
+            priority // 标记为优先加载（首屏图）
             style={{ objectFit: 'cover' }} // 确保图片覆盖容器
-            className="opacity-70 transition duration-500 ease-in-out hover:opacity-100" // 添加一些透明度，让文字更突出，并添加悬浮效果
+            className="opacity-70 transition duration-500 ease-in-out hover:opacity-100" // 添加一些透明度
           />
+// ...
         </div>
         
         {/* 标题和按钮 (保持在图片上方) */}
