@@ -24,13 +24,10 @@ export default function Home() {
         
         {/* **新增**：汽车图片作为背景 */}
         {/* Next.js 的 Image 组件会自动优化图片性能 */}
-        <div className="absolute inset-0 z-0">
-          // src/app/page.js
-// ...
-          // src/app/page.js
+        <div className="absolute inset-0 z-0 h-full w-full">  {/* <--- 请将代码加在这里 */}
 // ...
           <Image
-            src="/images/hero-car.png" // **确保是 .png**
+            src="/images/hero-car.jpg" // **确保是 .png**
             alt="鑫源E3 汽车高清图片"
             fill // 填充整个父容器
             priority // 标记为优先加载（首屏图）
